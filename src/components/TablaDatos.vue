@@ -1,10 +1,12 @@
 <template>
+    <v-container class="primary">
+        <h4>Lista de usuarios (puedes ordenar por nombre, suscripcion o buscar por palabra)</h4>
         <v-data-table
+        class="accent"
         :headers="headers"
         :items="lista"
         item-key="nombre"
         :items-per-page="5"
-        class="elevation-1"
         :search="busqueda"
         :custom-filter="filtro"
         >
@@ -16,6 +18,7 @@
         ></v-text-field>
       </template>
         </v-data-table>
+    </v-container>
 </template>
 
 <script>
@@ -45,7 +48,7 @@
         return value != null &&
           busqueda != null &&
           typeof value === 'string' &&
-          value.toString().indexOf(busqueda) !== -1
+          value.toString().toLowerCase().indexOf(busqueda) !== -1
       }
       },
       //se crea al inicializar vue
