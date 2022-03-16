@@ -78,6 +78,7 @@
         </v-btn>
         </form>
     </validation-observer>
+    <p></p>
   <tabla-datos :lista="listaUsu"/>
   </div>
 </template>
